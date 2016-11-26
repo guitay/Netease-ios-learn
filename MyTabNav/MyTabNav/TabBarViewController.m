@@ -30,8 +30,11 @@
     [index setSelectedImage:[UIImage imageNamed:@"index_selected"]];
     
     [active setImage:[UIImage imageNamed:@"active_normal"]];
-    [active setBadgeColor:[UIColor redColor]];
-    [active setBadgeValue:@""];
+//    [active setBadgeColor:[UIColor redColor]];
+//    [active setBadgeValue:@""];
+    
+    [self addBadgeView];
+    
     [active setSelectedImage:[UIImage imageNamed:@"active_selected"]];
     
     [catalog setImage:[UIImage imageNamed:@"catalog_normal"]];
@@ -43,6 +46,21 @@
     [kola setImage:[UIImage imageNamed:@"kola_normal"]];
     [kola setSelectedImage:[UIImage imageNamed:@"kola_selected"]];
     
+}
+
+-(void) addBadgeView{
+
+    UIView *badgeView = [[UIView alloc] init];
+    badgeView.backgroundColor = [UIColor colorWithRed:0.82 green:0.16 blue:0.29 alpha:1];
+    CGRect tabFrame = self.tabBar.frame;
+    float percentX = (1 + 0.7)/5;
+    CGFloat x = ceilf(percentX * tabFrame.size.width);
+    CGFloat y = ceilf(0.1 * tabFrame.size.height);
+    badgeView.frame = CGRectMake(x, y, 10, 10);
+    badgeView.layer.cornerRadius = 5;
+    [self.tabBar addSubview:badgeView];
+
+
 }
 
 - (void)didReceiveMemoryWarning {

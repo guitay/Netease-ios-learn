@@ -97,12 +97,15 @@
 //    cell.detailTextLabel.text=@"扫地机器人家用吸尘器全自动智能拖地机";
    cell.accessoryType = UITableViewCellAccessoryDetailButton;
    cell.imageView.image = [UIImage imageNamed:imageName];
-
-
+   [cell setAccessoryType ];
+   [cell setAccessoryAction:@select(referenceTime)];
     
-//    CustomTableViewCell.images.
-    
-    return customViewCell;
+   return cell;
 }
 
+-(void) referenceTime
+{
+ UIAlertView *al = [[UIAlertView alloc] initWithTitle:@"hi" message:@"hi" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
+ [al show];
+}
 @end

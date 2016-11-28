@@ -5,6 +5,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.title = @"我";
     
     _sections=@[@"我"];
 

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="LoginInfoView" id="iN0-l3-epB" customClass="LoginInfoView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me-user" translatesAutoresizingMaskIntoConstraints="NO" id="HXM-4W-2vQ">
+                    <rect key="frame" x="20" y="10" width="40" height="40"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="张三" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8n-0U-E0e">
+                    <rect key="frame" x="75" y="10" width="80" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="Ifa-wZ-Cm5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客户经理" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRt-EV-Ygp">
+                    <rect key="frame" x="75" y="33" width="80" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="0.68073842005076135" green="0.68073842005076135" blue="0.68073842005076135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20161225" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfd-pA-FcR">
+                    <rect key="frame" x="313" y="10" width="54" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="54" id="1I3-do-tf0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="数据日期：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmZ-cw-zPY">
+                    <rect key="frame" x="265" y="10" width="53" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="53" id="n6L-le-fvf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="SmZ-cw-zPY" secondAttribute="trailing" constant="57" id="1Ve-at-csO"/>
+                <constraint firstItem="cfd-pA-FcR" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="5M6-Jw-Vul"/>
+                <constraint firstItem="SmZ-cw-zPY" firstAttribute="baseline" secondItem="cfd-pA-FcR" secondAttribute="baseline" id="6ci-mq-bA4"/>
+                <constraint firstItem="HXM-4W-2vQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="Bu7-PI-7t4"/>
+                <constraint firstItem="C8n-0U-E0e" firstAttribute="leading" secondItem="GRt-EV-Ygp" secondAttribute="leading" id="CDI-EA-XbO"/>
+                <constraint firstItem="GRt-EV-Ygp" firstAttribute="top" secondItem="C8n-0U-E0e" secondAttribute="bottom" constant="2" id="FtJ-3E-lRZ"/>
+                <constraint firstItem="HXM-4W-2vQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="YLK-HO-9Sf"/>
+                <constraint firstItem="C8n-0U-E0e" firstAttribute="leading" secondItem="HXM-4W-2vQ" secondAttribute="trailing" constant="15" id="YOU-Gs-5s1"/>
+                <constraint firstItem="HXM-4W-2vQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-147.5" id="YfM-Xf-nMx"/>
+                <constraint firstAttribute="bottom" secondItem="HXM-4W-2vQ" secondAttribute="bottom" constant="10" id="jWD-dQ-zbe"/>
+                <constraint firstItem="SmZ-cw-zPY" firstAttribute="bottom" secondItem="C8n-0U-E0e" secondAttribute="bottom" id="lfr-mq-1Ga"/>
+                <constraint firstItem="C8n-0U-E0e" firstAttribute="top" secondItem="HXM-4W-2vQ" secondAttribute="top" id="pPg-vx-f61"/>
+                <constraint firstItem="SmZ-cw-zPY" firstAttribute="top" secondItem="HXM-4W-2vQ" secondAttribute="top" id="q2g-db-XJr"/>
+                <constraint firstItem="HXM-4W-2vQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-20" symbolic="YES" id="sxQ-gZ-Nns"/>
+                <constraint firstItem="C8n-0U-E0e" firstAttribute="trailing" secondItem="GRt-EV-Ygp" secondAttribute="trailing" id="tBe-R4-wu5"/>
+                <constraint firstItem="cfd-pA-FcR" firstAttribute="top" secondItem="HXM-4W-2vQ" secondAttribute="top" id="zTF-V4-0cT"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="sxQ-gZ-Nns"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="dataDate" destination="cfd-pA-FcR" id="d8w-5U-y9A"/>
+                <outlet property="loginName" destination="C8n-0U-E0e" id="FzH-9b-YDp"/>
+                <outlet property="roleName" destination="GRt-EV-Ygp" id="ONf-mI-HK0"/>
+            </connections>
+            <point key="canvasLocation" x="-350.5" y="1334"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="me-user" width="90" height="90"/>
+    </resources>
+</document>

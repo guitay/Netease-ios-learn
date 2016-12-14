@@ -1,4 +1,5 @@
 #import "MeRootViewController.h"
+#import "AlertCfgViewController.h"
 #import "models.h"
 
 @implementation MeRootViewController 
@@ -11,16 +12,16 @@
     
     _sections=@[@"我"];
 
-    MeTableCell *cell1 = [[MeTableCell alloc]initWithTitle:@"最新消息" image:@"" target:@"NewsViewController"];
-    MeTableCell *cell2 = [[MeTableCell alloc]initWithTitle:@"提醒设置" image:@"" target:@"AlertCfgViewController"];
-    MeTableCell *cell3 = [[MeTableCell alloc]initWithTitle:@"意见反馈" image:@"" target:@"FeedBackViewController"];
-    MeTableCell *cell4 = [[MeTableCell alloc]initWithTitle:@"关于我们" image:@"" target:@"AboutUsViewController"];
+    MeTableCell *cell1 = [[MeTableCell alloc]initWithTitle:@"最新消息" image:@"me-zxxx" target:@"NewsViewController"];
+    MeTableCell *cell2 = [[MeTableCell alloc]initWithTitle:@"提醒设置" image:@"me-txsz" target:@"AlertCfgViewController"];
+    MeTableCell *cell3 = [[MeTableCell alloc]initWithTitle:@"意见反馈" image:@"me-yjfk" target:@"FeedBackViewController"];
+    MeTableCell *cell4 = [[MeTableCell alloc]initWithTitle:@"关于我们" image:@"me-about" target:@"AboutUsViewController"];
 
     _rows=@[@[ cell1,cell2,cell3,cell4],];
 
     self.title=@"我";
-    [self genTableFooterView];
-    // self.tableView.editing = YES;
+//    [self genTableFooterView];
+//     self.tableView.editing = YES;
 }
 
 -(void)genTableFooterView{
@@ -95,18 +96,58 @@
    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
    cell.textLabel.text = title;
    cell.textLabel.numberOfLines = 0;
-//    cell.detailTextLabel.text=@"扫地机器人家用吸尘器全自动智能拖地机";
+    
    cell.accessoryType = UITableViewCellAccessoryDetailButton;
    cell.imageView.image = [UIImage imageNamed:imageName];
    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator ];
-//   [cell setAccessoryView:<#(UIView * _Nullable)#>:@select(referenceTime)];
+//   [cell setAccessoryAction:@selector(accessoryAction)];
+//    AlertCfgViewController *myView = [[AlertCfgViewController alloc] init];
+//    [cell setAccessoryView:myView.view];
+    [cell.accessoryView targetForAction:@selector(showMyview) withSender:self];
     
    return cell;
 }
 
--(void) referenceTime
-{
- UIAlertView *al = [[UIAlertView alloc] initWithTitle:@"hi" message:@"hi" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
- [al show];
+-(void) showMyview{
+    
+//    AlertCfgViewController *myView = [[AlertCfgViewController alloc] init];
+    NSLog(@"abcdefghijklmn.....");
 }
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if(section==0){
+        NSArray *topLevelObjects = [[NSBundle mainBundle]loadNibNamed:@"LoginInfo" owner:nil options:nil];
+        NSLog(@"%@",topLevelObjects);
+        return [topLevelObjects objectAtIndex:0];
+    }
+    return nil;
+}
+
+
+// custom view for header. will be adjusted to default or specified header height
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60.f;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if(section==0)
+        return 80.f;
+    else
+        return 0.f;
+}
+
+#pragma TableViewDelegate协议实现
+// Accessories (disclosures).
+
+- (UITableViewCellAccessoryType)tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellAccessoryDisclosureIndicator;
+}
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%@",indexPath);
+}
+
+
+
+
 @end

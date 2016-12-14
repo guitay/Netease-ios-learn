@@ -23,9 +23,29 @@
     [_tipMsgLabel setHidden:YES];
     [_loadingIndicatorView stopAnimating ];
     
+    [self addLayoutConstrains];
+    
     
 
 //    [_loginButton addTarget:self action:@selector(loginButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)addLayoutConstrains{
+    
+    NSLayoutConstraint *constraint1 = [NSLayoutConstraint constraintWithItem:_userNameView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.f constant:600.f];
+    
+    NSLayoutConstraint *constraint2=[NSLayoutConstraint constraintWithItem:_passwordView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_userNameView attribute:NSLayoutAttributeBottom multiplier:1.f constant:10.f];
+    
+    NSLayoutConstraint *constraint3=[NSLayoutConstraint constraintWithItem:_accountTextField attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.f constant:1000.f];
+
+    
+//    [NSLayoutConstraint constraintWithItem:_userNameLabel attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_userNameView attribute:NSLayoutAttributeLeading multiplier:1.0f constant:0];
+//    [NSLayoutConstraint constraintWithItem:_passwordLabel attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_passwordView attribute:NSLayoutAttributeLeading multiplier:1.0f constant:0];
+//    
+//    [NSLayoutConstraint constraintWithItem:_accountTextField attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_userNameLabel attribute:NSLayoutAttributeLeading multiplier:1.0f constant:10];
+//    [NSLayoutConstraint constraintWithItem:_passwordTextField attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_passwordLabel attribute:NSLayoutAttributeLeading multiplier:1.0f constant:0];
+    NSArray *contraints = @[constraint1,constraint2,constraint3];
+    [self.view addConstraints:contraints];
 }
 
 - (IBAction)loginButtonAction:(id)sender {
